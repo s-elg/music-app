@@ -3,9 +3,12 @@ import { StyleSheet, Text, View, FlatList } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import music_data from './music-data.json';
 
+import SongCard from './components/SongCard';
+
 
 export default function App() {
 
+  const renderSong = ({item}) => <SongCard song = {item} />;
 
 
   return (
@@ -13,8 +16,9 @@ export default function App() {
       <SafeAreaView style={styles.container}>
         <View>
           <FlatList 
+            keyExtractor={(item) => item.id}
             data = {music_data}
-            renderItem = {({item}) => <Text>{item.title}</Text>}
+            renderItem = {renderSong}
           />
         </View>
       </SafeAreaView>
