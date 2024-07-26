@@ -7,9 +7,9 @@ export default StyleSheet.create({
     },
 
     image: {
-        width: 122,
-        height: 126,
-        borderRadius: 56,
+        width: 100,
+        height: 100,
+        borderRadius: 50,
     },
 
     inner_container: {
@@ -28,8 +28,12 @@ export default StyleSheet.create({
     },
 
     info_container: {
-        flexDirection: 'row',
         flex: 1,
+    },
+
+    artist_info_container: {
+        flexDirection: 'row',
+        alignItems: 'baseline'
     },
 
     year: {
@@ -44,10 +48,20 @@ export default StyleSheet.create({
         borderColor: 'red',
         padding: 5,
         borderRadius: 6,
+        height: 30,
     },
 
     soldout_title: {
         color: 'red'
+    },
+
+    album_title: {
+        color: 'gray'
+
+    },
+
+    song_title: {
+        fontSize: 17
     }
 
 })

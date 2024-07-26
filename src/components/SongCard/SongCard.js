@@ -10,8 +10,13 @@ const SongCard = (props) => {
                 <Text style={styles.title}>{props.song.title}</Text>
                 <View style={styles.content_container}>
                     <View style={styles.info_container}>
-                        <Text>{props.song.artist}</Text>
-                        <Text style={styles.year}>{props.song.year}</Text>
+                        <View style={styles.artist_info_container}>
+                            <Text style = {styles.song_title}>{props.song.artist}</Text>
+                            <Text style={styles.year}>{props.song.year}</Text>
+                        </View>
+                        <View>
+                            <Text style={styles.album_title}>{props.song.album.toUpperCase()}</Text>
+                        </View>
                     </View>
                     {props.song.isSoldOut && (
                         <View style={styles.soldout_container}>
