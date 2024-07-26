@@ -7,9 +7,9 @@ import SongCard from './components/SongCard';
 
 
 export default function App() {
-
   const renderSong = ({item}) => <SongCard song = {item} />;
 
+  const renderSeperator = () => <View style = {styles.seperator} />
 
   return (
     <SafeAreaProvider style={styles.container}>
@@ -19,6 +19,7 @@ export default function App() {
             keyExtractor={(item) => item.id}
             data = {music_data}
             renderItem = {renderSong}
+            ItemSeparatorComponent={renderSeperator}
           />
         </View>
       </SafeAreaView>
@@ -29,6 +30,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+
+  seperator: {
+    borderWidth: 0.65,
+    borderColor: '#e0e0e0'
   }
 })
 
